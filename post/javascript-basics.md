@@ -25,7 +25,7 @@ if this is your first time learning JavaScript, we reccomend you to use the Brow
 - Open your web browser and navigate to the developer console. This can usually be accessed by pressing F12 or right-clicking anywhere on the webpage and selecting "Inspect" or "Inspect Element."
 - Locate the developer console tab, which is typically where you can interact with the webpage's code.
 
-![devtools](/post/assets/javascript-basics/console.jpeg)
+![devtools](/assets/blog/javascript-basics/console.jpeg)
 _this is what a devtools console should look like_
 
 # **Your First JavaScript Program: Hello World!**
@@ -40,7 +40,7 @@ console.log("Hello World!");
 
 the `console.log` function is used to print messages to the console
 
-![console.log](/post/assets/javascript-basics/log.jpeg)
+![console.log](/assets/blog/javascript-basics/log.jpeg)
 
 There you go! your first javascript code!
 to continue on, you can look up tutorials online or look at the Javascript documentations
