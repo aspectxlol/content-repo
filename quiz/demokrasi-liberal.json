@@ -5,7 +5,8 @@
   "coverImage": "",
   "questions": [
     {
-      "content": "![tokoh](/assets/quiz/demokrasi-liberal/tokoh.png)\n        Tokoh ini merupakan pelopor gerakan Partai Sarekat Islam yang menentang kolonialisme Belanda. Beliau adalah",
+      "content": "Tokoh ini merupakan pelopor gerakan Partai Sarekat Islam yang menentang kolonialisme Belanda. Beliau adalah",
+      "attachment": "/assets/quiz/demokrasi-liberal/tokoh.png",
       "options": [
         {
           "content": "Sutan Sjahrir"
