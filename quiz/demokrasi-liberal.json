@@ -1,0 +1,49 @@
+{
+  "slug": "demokrasi-liberal",
+  "title": "Demokrasi Liberal",
+  "description": "Kisi Kisi ASAS Sejarah - Demokrasi Liberal",
+  "coverImage": "",
+  "questions": [
+    {
+      "content": "![tokoh](/assets/quiz/demokrasi-liberal/tokoh.png)\n        Tokoh ini merupakan pelopor gerakan Partai Sarekat Islam yang menentang kolonialisme Belanda. Beliau adalah",
+      "options": [
+        {
+          "content": "Sutan Sjahrir"
+        },
+        {
+          "content": "Mohammad Hatta"
+        },
+        {
+          "content": "Mohammad Yamin"
+        },
+        {
+          "content": "Sutan Sjahrir",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "content": "Berdasarkan pernyataan di atas, penyebab jatuh bangunnya kabinet selama masa Demokrasi Liberal (1950-1959) berada pada pernyataan nomor...\n          ",
+      "options": [
+        {
+          "content": "1) Kabinet bersifat presidensial"
+        },
+        {
+          "content": "2) Kabinet bersifat parlementer",
+          "isCorrect": true
+        },
+        {
+          "content": "3) Persaingan antarpartai politik yang saling menjatuhkan",
+          "isCorrect": true
+        },
+        {
+          "content": "4) Koalisi partai politik yang dibangun gampang pecah",
+          "isCorrect": true
+        },
+        {
+          "content": "5) Pemerintah membangun partai tunggal"
+        }
+      ]
+    }
+  ]
+}
