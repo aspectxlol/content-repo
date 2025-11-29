@@ -44,6 +44,24 @@
           "content": "5) Pemerintah membangun partai tunggal"
         }
       ]
+    },
+    {
+      "content": "Pada masa demokrasi liberal keadaan pemerintahan tidak stabil. Hal ini disebabkan karena …\n          ",
+      "options": [
+        {
+          "content": "sering terjadi pergantian kabinet akibat koalisi partai politik yang mudah pecah",
+          "isCorrect": true
+        },
+        {
+          "content": "sistem pemerintahan presidensial yang kuat"
+        },
+        {
+          "content": "adanya campur tangan asing dalam pemerintahan"
+        },
+        {
+          "content": "kurangnya peran militer dalam politik"
+        }
+      ]
     }
   ]
 }
