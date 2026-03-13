@@ -1,7 +1,7 @@
 ---
 title: "Building UPRAK-POS: A Terminal-Based POS System for My Ujian Praktik"
 excerpt: "I had to build a cashier system for my final practical exam. Here's how far I took it."
-coverImage: "/assets/blog/uprak-pos/cover.jpeg"
+coverImage: "/assets/blog/uprak-pos/cover.jpg"
 date: "2026-03-13T05:35:07.322Z"
 ---
 
