@@ -1,29 +1,22 @@
 ---
-title: "Javascript 101"
-excerpt: "the Basics to get you started with Javascript, the language of the browser"
-coverImage: "/assets/blog/javascript-basics/cover.jpeg"
-date: "2024-06-01T05:35:07.322Z"
+title: "Building UPRAK-POS: A Terminal-Based POS System for My Ujian Praktik"
+excerpt: "I had to build a cashier system for my final practical exam. Here's how far I took it."
+coverImage: "/assets/blog/uprak-pos/cover.jpeg"
+date: "2026-03-13T05:35:07.322Z"
 ---
 
 # Building UPRAK-POS: A Terminal-Based POS System for My Ujian Praktik
 
-So I had to build something for my Ujian Praktik (UPRAK) — the practical exam at the end of the school year. The criteria were specific: build a cashier or sales system, implement QR-based payment, and make it as impressive as possible.
-
-That last part — *make it as impressive as possible* — was the interesting one. It meant there was no ceiling. Just a floor (it has to work, it has to have QR payment) and a direction (go as far as you can).
-
-I built a full terminal-based Point of Sale system. The kind you'd see at a school canteen or a small warung. I called it **UPRAK-POS**.
-
-Here's how it went.
+I had to build a cashier system for my Ujian Praktik. The criteria: implement QR-based payment, and go as far as you can. Here's how far I went.
 
 ---
 
 ## Why a POS System?
 
-The theme was already set — cashier/sales system — so the question wasn't *what* to build, it was *how far to take it*. Given the "make it as impressive as possible" criteria, I wanted to build something that felt complete, not just a script that handles one happy path.
-
-A POS also happened to be personally meaningful. My family runs a small business and they track sales manually — like, pen and paper manually. So this wasn't just an exam project; it could actually be useful.
+The theme was already set — cashier/sales system — so the question wasn't *what* to build, it was *how far to take it*. A POS also happened to be personally meaningful. My family runs a small business and they track sales manually — like, pen and paper manually. So this wasn't just an exam project; it could actually be useful.
 
 It also gave me a lot of surface area to work with on the technical side:
+
 - **OOP** — a natural fit for modeling products, carts, and transactions
 - **File I/O** — CSV for persistent storage, TXT for receipts
 - **Input validation** — lots of it, across every user-facing input
@@ -95,7 +88,7 @@ The method breakdown ended up like this:
 
 ## The Challenges
 
-### 1. Cart Accumulation Logic
+### 1. Cart accumulation logic
 
 The cart wasn't supposed to add duplicate rows — if you add "Nasi Goreng" twice, it should just increment the `qty`. Getting this right took a couple of tries.
 
@@ -109,11 +102,11 @@ else:
 
 Using `next()` with a generator expression here is clean and readable. I liked how this turned out.
 
-### 2. Input Validation Everywhere
+### 2. Input validation everywhere
 
 Every single input needed to be validated. Numeric checks, empty string checks, ID existence checks, "is this cash amount enough" checks. I ended up writing two helper functions early on — `input_number()` and `input_int()` — that loop until they get valid input. That saved a lot of repeated `try/except` blocks throughout the methods.
 
-### 3. The Colab vs. Local Problem
+### 3. The Colab vs. local problem
 
 The project needed to run in **two environments**: locally in a terminal, and in Google Colab as a `.ipynb` notebook. This created a real pain point with `clear_screen()`.
 
@@ -128,11 +121,11 @@ def clear_screen() -> None:
 
 The `time.sleep(0.5)` was also needed because Colab's input/output pipeline has a slight async delay — without it, inputs would sometimes fire before the screen re-rendered, which looked broken.
 
-### 4. QRIS Payment
+### 4. QRIS payment
 
-The criteria here was pretty low-bar — just show *some* kind of QR code as a fake payment indicator. Most people probably slapped a static QR image on screen and called it done.
+Most people probably slapped a static QR image on screen and called it done. I wanted something that actually made sense as a system.
 
-I went further. Instead of a dummy QR, I built one that actually encodes real payment data — customer name, merchant name, and the transaction amount — serialized as JSON, base64-encoded, and appended to a live URL I hosted myself.
+The QR code I generate encodes real payment data — customer name, merchant name, and the transaction amount — serialized as JSON, base64-encoded, and appended to a live URL I hosted myself:
 
 ```python
 payment_data = {
@@ -144,7 +137,7 @@ encoded_data = base64.b64encode(json.dumps(payment_data).encode()).decode()
 payment_url = f"https://louie.is-a.dev/random/uprak-pos/payment?data={encoded_data}"
 ```
 
-So every QR code generated is unique to that transaction. Scan it and you get an actual page with the payment details decoded from the URL. It's not a real payment gateway, but it's a real system — and that's what "make it as impressive as possible" meant to me.
+Every QR code generated is unique to that transaction. Scan it and you land on an actual page that decodes the URL and shows you the payment details. Not a real payment gateway — but a real system. No two transactions produce the same code, and the data travels with the QR itself rather than being stored server-side. That felt like the right way to do it.
 
 ---
 
@@ -172,13 +165,13 @@ Looking back, a few things I'd do differently:
 
 ## Shoutouts
 
-This was technically a solo coding project, but I didn't do it completely alone. Big thanks to **Destiana, Echa, and Yosua** — my UPRAK project mates — who helped out on the visuals side of things. The presentation and overall look wouldn't have come together as well without them.
+This was technically a solo coding project, but I didn't do it completely alone. Big thanks to **Destiana, Echa, and Yosua** — my UPRAK project mates — who handled the slides and presentation deck, ran bug testing, and threw around ideas I actually ended up using. The terminal color scheme came out of one of those conversations. The project would've looked and felt worse without them.
 
 ---
 
 ## Final Thoughts
 
-UPRAK-POS ended up being one of the more complete things I've shipped for school. It runs, it handles bad input, it generates real receipts, it has a QR code for payment — it works.
+UPRAK-POS ended up being one of the more complete things I've shipped for school. It runs, it handles bad input, it generates real receipts, it has a QR code that actually encodes transaction data — it works.
 
 The goal was to demonstrate Python concepts for an exam, but it also ended up being something that could genuinely be used at a small canteen with minimal setup. That felt good.
 
