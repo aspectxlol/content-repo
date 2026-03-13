@@ -13,7 +13,6 @@
 .pnp.*
 
 package.json
-readme.md
 yarn.lock
 .yarn
 .editorconfig
