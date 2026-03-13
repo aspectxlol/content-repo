@@ -183,6 +183,6 @@ If you want to try it out: run `pip install qrcode[pil]`, grab `main.py`, and ru
 
 ---
 
-[GitHub](https://github.com/aspectxlol/uprak-pos) · [Google Colab](https://colab.research.google.com/github/aspectxlol/uprak-pos/blob/main/UPRAK_POS_System.ipynb#scrollTo=f99ca7f6) *(in Indonesian -- the presentation was, so the notebook stayed that way)*
+[GitHub](https://github.com/aspectxlol/uprak-pos), [Google Colab](https://colab.research.google.com/github/aspectxlol/uprak-pos/blob/main/UPRAK_POS_System.ipynb#scrollTo=f99ca7f6) *(in Indonesian -- the presentation was, so the notebook stayed that way)*
 
 *this post was written with a little help ✦*
