@@ -1,0 +1,45 @@
+---
+title: MDX Test Post
+slug: mdx-test
+---
+
+# MDX Interactive Test
+
+This is a test of MDX interactivity! Below is a working React component:
+
+export const InteractiveCounter = () => {
+  const [count, setCount] = require('react').useState(0);
+  
+  return (
+    <div style={{ padding: '20px', border: '2px solid #ccc', borderRadius: '8px', marginTop: '20px' }}>
+      <p>Button clicks: <strong>{count}</strong></p>
+      <button 
+        onClick={() => setCount(count + 1)}
+        style={{ 
+          padding: '10px 20px', 
+          fontSize: '16px',
+          backgroundColor: '#007bff',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer'
+        }}
+      >
+        Click me!
+      </button>
+    </div>
+  );
+};
+
+<InteractiveCounter />
+
+## How it works
+
+MDX lets you:
+- Write **markdown** like normal
+- Add **React components** directly
+- Use **JavaScript expressions** like `{new Date().getFullYear()}`
+
+Current year: {new Date().getFullYear()}
+
+Try clicking the button above to see React state in action! 🎉
