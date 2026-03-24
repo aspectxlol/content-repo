@@ -27,11 +27,21 @@ Use `<Toggle />` to switch between two states:
 
 Perfect for showing/hiding features or toggling settings.
 
-## Tabs Component (Advanced)
+## Tabs Component
 
-The `<Tabs />` component displays tabbed content. For complex props in MDX, ensure JSON is properly formatted.
+The `<Tabs />` component displays tabbed content using a simple composition pattern:
 
-*Tabs with multiple sections coming soon - currently working on MDX prop serialization.*
+<Tabs>
+  <Tab label="React">
+    React is a JavaScript library for building user interfaces with components. It makes creating interactive UIs painless.
+  </Tab>
+  <Tab label="MDX">
+    MDX lets you write JSX in markdown files, combining markdown simplicity with React power.
+  </Tab>
+  <Tab label="Interactive">
+    All of this is interactive - state is preserved per user session, making for engaging blog posts!
+  </Tab>
+</Tabs>
 
 ## Dynamic Content
 
