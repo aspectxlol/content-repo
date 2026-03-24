@@ -3,12 +3,14 @@ title: MDX Test Post
 slug: mdx-test
 ---
 
+import { useState } from 'react';
+
 # MDX Interactive Test
 
 This is a test of MDX interactivity! Below is a working React component:
 
 export const InteractiveCounter = () => {
-  const [count, setCount] = require('react').useState(0);
+  const [count, setCount] = useState(0);
   
   return (
     <div style={{ padding: '20px', border: '2px solid #ccc', borderRadius: '8px', marginTop: '20px' }}>
@@ -43,3 +45,4 @@ MDX lets you:
 Current year: {new Date().getFullYear()}
 
 Try clicking the button above to see React state in action! 🎉
+
