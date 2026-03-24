@@ -1,55 +1,85 @@
 ---
-title: MDX Test Post
+title: MDX Interactive Components Test
 slug: mdx-test
-excerpt: Testing MDX interactivity with basic markdown and dynamic content
+excerpt: Learn how to use interactive React components in your MDX blog posts
 coverImage: /blog/mdx-test/cover.jpg
 date: 2026-03-24
-tags: [MDX, React, Interactive]
+tags: [MDX, React, Interactive, Components]
 ---
 
-# MDX Interactive Test
+# MDX Interactive Components
 
-This is a test of MDX interactivity! MDX lets you combine markdown with React. Below are some examples:
+This post demonstrates the interactive components available in MDX. Try them out!
 
-## Dynamic Content Example
+## Counter Component
 
-The current year is: **{new Date().getFullYear()}**
+The `<Counter />` component tracks state and responds to clicks:
 
-You can also use inline code expressions like `{1 + 1 = 2}`.
+<Counter initial={0} label="Click Counter" />
 
-## Markdown Features
+You can reset, increment, or decrement the count!
 
-MDX supports all standard **markdown** features:
+## Toggle Component
 
-- Lists
-- **Bold** and *italic*
-- `Code blocks`
-- [Links](https://example.com)
+Use `<Toggle />` to switch between two states:
 
-### Code Blocks
+<Toggle label="Feature Switch" onText="Feature On" offText="Feature Off" />
 
-Here's some syntax-highlighted code:
+Perfect for showing/hiding features or toggling settings.
 
-```javascript
-function hello() {
-  console.log("Hello from MDX!");
-  return true;
-}
+## Tabs Component
+
+Display tabbed content with `<Tabs />`:
+
+<Tabs tabs={[
+  {
+    label: "React",
+    content: "React is a JavaScript library for building user interfaces with components."
+  },
+  {
+    label: "MDX",
+    content: "MDX lets you write JSX in markdown files, combining markdown simplicity with React power."
+  },
+  {
+    label: "Interactive",
+    content: "All of this is interactive - state is preserved per user session, making for engaging blog posts!"
+  }
+]} />
+
+## Dynamic Content
+
+MDX supports JavaScript expressions inline:
+
+- Current year: **{new Date().getFullYear()}**
+- Today's date: **{new Date().toLocaleDateString()}**
+- Random number: **{Math.floor(Math.random() * 100)}**
+
+## How to Use These
+
+In your `.mdx` files, simply use the components:
+
+```mdx
+<Counter initial={5} label="My Counter" />
+
+<Toggle label="Enable Dark Mode" onText="Dark" offText="Light" />
+
+<Tabs tabs={[
+  { label: "Tab 1", content: "Content here" },
+  { label: "Tab 2", content: "More content" }
+]} />
 ```
 
-## React Integration
+## Creating Custom Components
 
-With MDX, you can directly embed React components. For custom interactive components, 
-they can be passed to your blog renderer component.
+Want to add more interactive components? 
 
-This example shows how MDX works with your blog system - you get the power of markdown
-with the ability to use React expressions and components!
+1. Create a new file in `src/components/mdx/`
+2. Mark it with `'use client'` (client component)
+3. Export your component
+4. Add it to the imports in `src/lib/utils.tsx`
+5. Add it to the components object in `parseFileToReactWithMDX`
 
----
+Then use it in any `.mdx` file! 🚀
 
-**Next steps**: To add fully custom interactive components, you may want to:
-1. Create reusable React components in your `src/components/` folder
-2. Pass them to the MDX renderer 
-3. Use them anywhere in your MDX content
 
 
