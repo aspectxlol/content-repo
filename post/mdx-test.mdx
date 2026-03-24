@@ -29,19 +29,13 @@ Perfect for showing/hiding features or toggling settings.
 
 ## Tabs Component
 
-The `<Tabs />` component displays tabbed content using a simple composition pattern:
+The `<Tabs />` component displays tabbed content using a simple array-based API:
 
-<Tabs>
-  <Tab label="React">
-    React is a JavaScript library for building user interfaces with components. It makes creating interactive UIs painless.
-  </Tab>
-  <Tab label="MDX">
-    MDX lets you write JSX in markdown files, combining markdown simplicity with React power.
-  </Tab>
-  <Tab label="Interactive">
-    All of this is interactive - state is preserved per user session, making for engaging blog posts!
-  </Tab>
-</Tabs>
+<Tabs items={[
+  { label: "React", content: "React is a JavaScript library for building user interfaces with components. It makes creating interactive UIs painless." },
+  { label: "MDX", content: "MDX lets you write JSX in markdown files, combining markdown simplicity with React power." },
+  { label: "Interactive", content: "All of this is interactive - state is preserved per user session, making for engaging blog posts!" }
+]} />
 
 ## Dynamic Content
 
@@ -60,7 +54,7 @@ In your `.mdx` files, simply use the components:
 
 <Toggle label="Enable Dark Mode" onText="Dark" offText="Light" />
 
-<Tabs tabs={[
+<Tabs items={[
   { label: "Tab 1", content: "Content here" },
   { label: "Tab 2", content: "More content" }
 ]} />
