@@ -61,11 +61,16 @@ Try clicking between tabs and using the Counter and Toggle components above. Eve
 
 ## Dynamic Content
 
-MDX supports JavaScript expressions inline:
+MDX supports JavaScript expressions inline using JSX:
 
-- Current year: **{new Date().getFullYear()}**
-- Today's date: **{new Date().toLocaleDateString()}**
-- Random number: **{Math.floor(Math.random() * 100)}**
+export const currentYear = new Date().getFullYear()
+export const currentDate = new Date().toLocaleDateString()
+
+<div className="my-4 p-4 bg-slate-800/50 rounded border border-slate-700 space-y-2">
+  <div>• Current year: <strong className="text-cyan-400">{currentYear}</strong></div>
+  <div>• Today's date: <strong className="text-cyan-400">{currentDate}</strong></div>
+  <div>• Random number: <strong className="text-cyan-400">{Math.floor(Math.random() * 100)}</strong></div>
+</div>
 
 ## How to Use These
 
