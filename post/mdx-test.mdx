@@ -1,48 +1,55 @@
 ---
 title: MDX Test Post
 slug: mdx-test
+excerpt: Testing MDX interactivity with basic markdown and dynamic content
+coverImage: /blog/mdx-test/cover.jpg
+date: 2026-03-24
+tags: [MDX, React, Interactive]
 ---
-
-import { useState } from 'react';
 
 # MDX Interactive Test
 
-This is a test of MDX interactivity! Below is a working React component:
+This is a test of MDX interactivity! MDX lets you combine markdown with React. Below are some examples:
 
-export const InteractiveCounter = () => {
-  const [count, setCount] = useState(0);
-  
-  return (
-    <div style={{ padding: '20px', border: '2px solid #ccc', borderRadius: '8px', marginTop: '20px' }}>
-      <p>Button clicks: <strong>{count}</strong></p>
-      <button 
-        onClick={() => setCount(count + 1)}
-        style={{ 
-          padding: '10px 20px', 
-          fontSize: '16px',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer'
-        }}
-      >
-        Click me!
-      </button>
-    </div>
-  );
-};
+## Dynamic Content Example
 
-<InteractiveCounter />
+The current year is: **{new Date().getFullYear()}**
 
-## How it works
+You can also use inline code expressions like `{1 + 1 = 2}`.
 
-MDX lets you:
-- Write **markdown** like normal
-- Add **React components** directly
-- Use **JavaScript expressions** like `{new Date().getFullYear()}`
+## Markdown Features
 
-Current year: {new Date().getFullYear()}
+MDX supports all standard **markdown** features:
 
-Try clicking the button above to see React state in action! 🎉
+- Lists
+- **Bold** and *italic*
+- `Code blocks`
+- [Links](https://example.com)
+
+### Code Blocks
+
+Here's some syntax-highlighted code:
+
+```javascript
+function hello() {
+  console.log("Hello from MDX!");
+  return true;
+}
+```
+
+## React Integration
+
+With MDX, you can directly embed React components. For custom interactive components, 
+they can be passed to your blog renderer component.
+
+This example shows how MDX works with your blog system - you get the power of markdown
+with the ability to use React expressions and components!
+
+---
+
+**Next steps**: To add fully custom interactive components, you may want to:
+1. Create reusable React components in your `src/components/` folder
+2. Pass them to the MDX renderer 
+3. Use them anywhere in your MDX content
+
 
